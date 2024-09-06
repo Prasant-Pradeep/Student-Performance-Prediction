@@ -31,4 +31,119 @@ The dataset used for this project tracks student performance and includes the fo
 "female","group B","bachelor's degree","standard","none","72","72","74"
 "female","group C","some college","standard","completed","69","90","88"
 "female","group B","master's degree","standard","none","90","95","93"
+```
+
+## 📁 Project Structure
+
+```
+├── artifacts/
+│   ├── data.csv               # Original dataset
+│   ├── model.pkl              # Trained machine learning model
+│   ├── preprocessor.pkl       # Data preprocessing pipeline
+│   ├── train.csv              # Training data
+│   ├── test.csv               # Test data
+│
+├── notebook/
+│   ├── 1. EDA STUDENT PERFORMANCE.ipynb     # Exploratory Data Analysis
+│   ├── 2. MODEL TRAINING.ipynb              # Model training and evaluation
+│
+├── src/
+│   ├── components/
+│   │   ├── data_ingestion.py                # Data ingestion script
+│   │   ├── data_transformation.py           # Data preprocessing and transformation
+│   │   ├── model_trainer.py                 # Model training and evaluation
+│   ├── pipeline/
+│   │   ├── train_pipeline.py                # Script to train the model pipeline
+│   │   ├── predict_pipeline.py              # Script for model inference on new data
+│   ├── utils/
+│   │   ├── logger.py                        # Custom logging functionality
+│   │   ├── exception.py                     # Error handling and custom exceptions
+│   │   ├── utils.py                         # Helper functions
+│
+├── venv/                                    # Virtual environment
+├── .gitignore                               # Git ignore file
+├── application.py                           # Main application entry point for inference
+├── requirements.txt                         # Required libraries
+├── README.md                                # Project readme (you're reading this!)
+├── setup.py                                 # Setup for packaging the project
+```
+
+## 🔨 Workflow & Key Steps
+
+### Logging & Error Handling:
+
+- Implemented robust logging mechanisms using the `logger.py` utility to track each step of the process.
+- Designed custom exception handling in `exception.py` to manage runtime errors gracefully.
+
+### Exploratory Data Analysis (EDA):
+
+- Conducted exploratory analysis to understand the distribution of data, relationships between features, and feature importance in predicting student performance.
+
+### Data Ingestion:
+
+- Built a data ingestion pipeline that reads the raw dataset and splits it into training and testing sets.
+
+### Data Transformation:
+
+- Implemented a data preprocessing pipeline to handle missing values, encode categorical variables, and standardize numerical features.
+
+### Model Training:
+
+- Trained a CatBoost regression model to predict student performance scores using the transformed data.
+- Saved the trained model as `model.pkl` and the preprocessor as `preprocessor.pkl` for future inference.
+
+### Prediction Pipeline:
+
+- Built a prediction pipeline to load the trained model and preprocessor to make predictions on new data.
+
+### Deployment:
+
+- Deployed the trained model on AWS Elastic Beanstalk for scalability and real-world inference.
+
+## 🔧 Setup & Installation
+
+### 1. Clone the Repository:
+
+```bash
+git clone https://github.com/your-repository-url.git
+cd your-repository-folder
+```
+
+### 2. Install Dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the Training Pipeline:
+
+```bash
+python src/pipeline/train_pipeline.py
+```
+
+### 4. Run the Prediction Pipeline:
+
+```bash
+python src/pipeline/predict_pipeline.py
+```
+
+## 🌐 Deployment
+
+The model is deployed on AWS Elastic Beanstalk, simulating a real-world production environment for inference and scalability. The model can process new data through an API and provide performance predictions.
+
+## 🛠 Technologies Used
+
+- **Programming Language**: Python
+- **Machine Learning**: Scikit-learn, CatBoost
+- **Deployment**: AWS Elastic Beanstalk
+- **Data Visualization**: Matplotlib, Seaborn
+- **Development Tools**: Git, Jupyter Notebooks
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-repository-url/issues).
+
+## 📄 License
+
+This project is licensed under the MIT License.
 
